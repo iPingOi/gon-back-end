@@ -1,12 +1,11 @@
 import { Hono } from 'hono'
+import routes from './routes'
 
 const app = new Hono()
 
 const _PORT = 3000
 
-app.get('/', (c) => c.json({
-  message: '😊 Everything is fine!'
-}, 200))
+app.route('/', routes)
 
 app.notFound((c) => {
   return c.json({
