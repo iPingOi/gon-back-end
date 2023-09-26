@@ -1,4 +1,8 @@
 import { Hono } from 'hono'
+
+import HandleError from '@/utils/errorHandle'
+import HandleNotFound from '@/utils/notFoundHandle'
+
 import routes from './routes'
 
 const app = new Hono()
@@ -7,18 +11,8 @@ const _PORT = 3000
 
 app.route('/', routes)
 
-app.notFound((c) => {
-  return c.json({
-    message: 'Oops, page not found. Try again later!'
-  }, 404)
-})
-
-app.onError((err, c) => {
-  console.error(`${err}`)
-  return c.json({
-    message: 'Oops, something went wrong. Try again later!'
-  }, 500)
-})
+HandleNotFound.Execute('Error')
+HandleError.Execute()
 
 export default {
   _PORT,
