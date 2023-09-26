@@ -4,8 +4,6 @@ import routes from './routes'
 
 const app = new Hono()
 
-const _PORT = 3000
-
 app.route('/', routes)
 
 app.notFound((c) => {
@@ -22,6 +20,6 @@ app.onError((err, c) => {
 })
 
 export default {
-  _PORT,
+  port: process.env._PORT,
   fetch: app.fetch
 }

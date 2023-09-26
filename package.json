@@ -6,7 +6,7 @@
     "hono": "^3.7.2"
   },
   "devDependencies": {
-    "bun-types": "^0.6.2",
+    "bun-types": "^1.0.3",
     "git-commit-msg-linter": "^5.0.4"
   }
 }
