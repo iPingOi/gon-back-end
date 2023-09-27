@@ -13,7 +13,7 @@ app.notFound((c) => {
 })
 
 app.onError((err, c) => {
-  console.error(`${err}`)
+  console.error('Message:', err.message)
   return c.json({
     message: 'Oops, something went wrong!'
   }, 500)
