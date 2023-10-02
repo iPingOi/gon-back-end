@@ -3,8 +3,10 @@
     "dev": "bun run --hot src/app.ts"
   },
   "dependencies": {
+    "@hono/zod-validator": "^0.1.9",
     "@prisma/client": "^5.3.1",
-    "hono": "^3.7.2"
+    "hono": "^3.7.3",
+    "zod": "^3.22.2"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^6.7.3",
