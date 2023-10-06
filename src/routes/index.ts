@@ -1,7 +1,7 @@
 import { Hono } from 'hono'
 
-import UserController from '@/app/controller/user/create'
-import UserMiddleware from '@/app/middleware/user/create'
+import Controller from '@/app/controllers'
+import Middleware from '@/app/middlewares'
 
 const routes = new Hono()
 
@@ -9,6 +9,7 @@ routes.get('/', (c) => c.json({
   message: '😊 Everything is fine!'
 }, 200))
 
-routes.post('/user', UserMiddleware.Create, UserController.Create)
+routes.post('/user', Middleware.CreateUser.Create, Controller.CreateUser.Execute)
+routes.post('/can', Controller.CreateJimp.Jimp)
 
 export default routes
