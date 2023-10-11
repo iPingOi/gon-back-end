@@ -9,3 +9,14 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model Product {
+  id           String   @id @unique @default(cuid())
+  code         String   @unique
+  internalCode String   @unique
+  name         String
+  complement   String
+  image        String
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}

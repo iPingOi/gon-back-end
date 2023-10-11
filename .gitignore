@@ -4,3 +4,6 @@ node_modules
 !.env.project
 !.env.vault
 !.previous
+.dist
+prisma/data.json
+prisma/populate.ts
