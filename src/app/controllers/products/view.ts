@@ -3,16 +3,7 @@ import { prisma } from '@/utils/prisma'
 import { type Context } from 'hono'
 
 class Products {
-  async View (c: Context): Promise<{
-    id: string
-    code: string
-    internalCode: string
-    name: string
-    packaging: string
-    image: string
-    createdAt: Date
-    updatedAt: Date
-  } | null> {
+  async View (c: Context): Promise<Response> {
     const { id } = c.req.param()
 
     const findByCode = await prisma.product.findUnique({
@@ -21,7 +12,7 @@ class Products {
       }
     })
 
-    return findByCode
+    return c.json(findByCode)
   }
 }
 
