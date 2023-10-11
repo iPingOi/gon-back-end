@@ -1,9 +1,8 @@
-import { PrismaClient } from '@prisma/client'
+import { prisma } from '@/utils/prisma'
+
 import { populate } from './populate'
 
-const prisma = new PrismaClient()
-
-async function main () {
+async function main() {
   await prisma.product.createMany({
     data: populate
   })

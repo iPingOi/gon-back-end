@@ -28,7 +28,7 @@ class Create {
         alignmentX: Jimp.HORIZONTAL_ALIGN_CENTER,
         alignmentY: Jimp.VERTICAL_ALIGN_MIDDLE
       },
-      550,
+      552,
       320
     )
 
@@ -49,42 +49,41 @@ class Create {
 
     base.print(
       await Jimp.loadFont(LATO_BLACK_125_ORANGE),
-      550,
-      1173,
+      100,
+      1212,
       {
-        text: 'R$' + price,
+        text: `R$${price}`,
         alignmentX: Jimp.HORIZONTAL_ALIGN_CENTER,
         alignmentY: Jimp.VERTICAL_ALIGN_MIDDLE
       },
-      550,
-      220,
-      (_err, base) => {
-        base.print(
-          fontUND,
-          550,
-          1173,
-          {
-            text: 'APENAS',
-            alignmentX: Jimp.HORIZONTAL_ALIGN_CENTER,
-            alignmentY: Jimp.VERTICAL_ALIGN_TOP
-          },
-          550,
-          233
-        )
+      1002,
+      150
+    )
 
-        base.print(
-          fontUND,
-          550,
-          1173,
-          {
-            text: 'A UNIDADE',
-            alignmentX: Jimp.HORIZONTAL_ALIGN_CENTER,
-            alignmentY: Jimp.VERTICAL_ALIGN_BOTTOM
-          },
-          550,
-          233
-        )
-      }
+    base.print(
+      fontUND,
+      100,
+      1173,
+      {
+        text: 'APENAS',
+        alignmentX: Jimp.HORIZONTAL_ALIGN_CENTER,
+        alignmentY: Jimp.VERTICAL_ALIGN_MIDDLE
+      },
+      1002,
+      48
+    )
+
+    base.print(
+      fontUND,
+      100,
+      1362,
+      {
+        text: 'A UNIDADE',
+        alignmentX: Jimp.HORIZONTAL_ALIGN_CENTER,
+        alignmentY: Jimp.VERTICAL_ALIGN_MIDDLE
+      },
+      1002,
+      48
     )
 
     base.write(path.join('src', 'assets', 'images', 'edited.png'))

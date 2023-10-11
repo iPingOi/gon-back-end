@@ -1,5 +1,6 @@
 {
   "scripts": {
+    "start": "bun run src/app.ts",
     "dev": "bun run --hot src/app.ts"
   },
   "dependencies": {
@@ -15,9 +16,12 @@
     "eslint": "^8.51.0",
     "eslint-config-standard-with-typescript": "latest",
     "eslint-plugin-import": "^2.28.1",
-    "eslint-plugin-n": "^16.1.0",
+    "eslint-plugin-n": "^16.2.0",
     "eslint-plugin-promise": "^6.1.1",
     "prisma": "^5.4.2",
     "typescript": "^5.2.2"
+  },
+  "prisma": {
+    "seed": "bunx ts-node prisma/seed.ts"
   }
 }
