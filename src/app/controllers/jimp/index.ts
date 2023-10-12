@@ -6,9 +6,9 @@ import { LATO_BLACK_125_ORANGE, LATO_BLACK_32_GREEN, LATO_BLACK_32_WHITE, LATO_B
 
 class Create {
   async Jimp (c: Context): Promise<Response> {
-    const { title, description, price, productImage }: {
+    const { title, packaging, price, productImage }: {
       title: string
-      description: string
+      packaging: string
       price: string
       productImage: string
     } = await c.req.json()
@@ -37,7 +37,7 @@ class Create {
       550,
       1061,
       {
-        text: description, // 13
+        text: packaging, // 13
         alignmentX: Jimp.HORIZONTAL_ALIGN_CENTER,
         alignmentY: Jimp.VERTICAL_ALIGN_MIDDLE
       },
