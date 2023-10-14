@@ -6,7 +6,8 @@ import { LATO_BLACK_125_ORANGE, LATO_BLACK_32_GREEN, LATO_BLACK_32_WHITE, LATO_B
 
 class Create {
   async Jimp (c: Context): Promise<Response> {
-    const { title, packaging, price, productImage }: {
+    const { code, title, packaging, price, productImage }: {
+      code: string
       title: string
       packaging: string
       price: string
@@ -86,7 +87,7 @@ class Create {
       48
     )
 
-    base.write(path.join('src', 'assets', 'images', 'edited.png'))
+    base.write(path.join('src', 'assets', 'images', `${code}.png`))
 
     return c.json({
       message: 'The image has been created!'
