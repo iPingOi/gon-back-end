@@ -15,10 +15,14 @@ class Create {
     } = await c.req.json()
 
     const base = await Jimp.read(path.join('src', 'assets', 'images', 'base.png'))
+    const sales = await Jimp.read(path.join('src', 'assets', 'images', 'sales', 'fim-de-semana.png'))
     const product = await Jimp.read(productImage)
 
     product.contain(400, 375)
     base.composite(product, 100, 758)
+
+    sales.contain(563, 343)
+    base.composite(sales, 318, 13)
 
     base.print(
       await Jimp.loadFont(LATO_BLACK_35_WHITE),
