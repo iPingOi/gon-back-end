@@ -1,4 +1,7 @@
 {
+  "name": "gon",
+  "license": "CC BY-NC-ND 4.0 DEED",
+  "private": true,
   "scripts": {
     "start": "node ./dist/app.js",
     "dev": "tsx watch src/app.ts",
