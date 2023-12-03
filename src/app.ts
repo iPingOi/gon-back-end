@@ -1,3 +1,4 @@
+import { serve } from '@hono/node-server'
 import { Hono } from 'hono'
 
 import routes from './routes'
@@ -19,7 +20,4 @@ app.onError((err, c) => {
   }, 500)
 })
 
-export default {
-  port: process.env._PORT,
-  fetch: app.fetch
-}
+serve(app)
