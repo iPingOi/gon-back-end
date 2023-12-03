@@ -2,10 +2,10 @@ import { type Context } from 'hono'
 import Jimp from 'jimp'
 import path from 'path'
 
-import { LATO_BLACK_125_ORANGE, LATO_BLACK_32_GREEN, LATO_BLACK_32_WHITE, LATO_BLACK_35_WHITE } from '@/assets/fonts'
+import { LATO_BLACK_125_ORANGE, LATO_BLACK_32_GREEN, LATO_BLACK_32_WHITE, LATO_BLACK_35_WHITE } from '../../../../public/assets/fonts'
 
 class Create {
-  async Jimp (c: Context): Promise<Response> {
+  async Jimp(c: Context): Promise<Response> {
     const { code, title, packaging, price, productImage }: {
       code: string
       title: string
@@ -14,8 +14,8 @@ class Create {
       productImage: string
     } = await c.req.json()
 
-    const base = await Jimp.read(path.join('src', 'assets', 'images', 'base.png'))
-    const sales = await Jimp.read(path.join('src', 'assets', 'images', 'sales', 'fim-de-semana.png'))
+    const base = await Jimp.read(path.join('public', 'assets', 'images', 'base.png'))
+    const sales = await Jimp.read(path.join('public', 'assets', 'images', 'sales', 'fim-de-semana.png'))
     const product = await Jimp.read(productImage)
 
     product.contain(400, 375)
@@ -91,7 +91,7 @@ class Create {
       48
     )
 
-    base.write(path.join('src', 'assets', 'images', `${code}.png`))
+    base.write(path.join('public', 'assets', 'images', `${code}.png`))
 
     return c.json({
       message: 'The image has been created!'

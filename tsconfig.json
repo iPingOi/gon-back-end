@@ -1,6 +1,10 @@
 {
   "compilerOptions": {
-    "outDir": "./dist",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "target": "ES2020",
+    "sourceMap": true,
+    "outDir": "dist",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
@@ -12,5 +16,6 @@
         "*"
       ]
     }
-  }
+  },
+  "include": ["src/**/*"]
 }
