@@ -23,5 +23,6 @@ routes.get('/product/:id', Controller.ViewProduct.View)
 routes.post('/user', Middleware.CreateUser.Create, Controller.CreateUser.Execute)
 routes.post('/create', Controller.CreateJimp.Jimp)
 routes.post('/product', Controller.CreateProduct.Execute)
+routes.post('/auth', Controller.UserAuth.Execute)
 
 export default routes
