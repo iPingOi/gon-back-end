@@ -7,7 +7,8 @@ import Middleware from '@/app/middlewares'
 
 const routes = new Hono()
 routes.use('*', cors({
-  origin: process.env.ORIGIN!
+  allowHeaders: ['Access-Control-Allow-Headers', process.env.BASE_URL!],
+  origin: process.env.BASE_URL!
 }))
 routes.use('/public/*', serveStatic({ root: './' }))
 
