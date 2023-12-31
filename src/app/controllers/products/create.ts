@@ -1,5 +1,4 @@
 import { prisma } from '@/utils/prisma'
-import * as argon2 from 'argon2'
 import { type Context } from 'hono'
 
 interface UserProps {
@@ -18,12 +17,7 @@ class Create {
         code,
         image,
         name,
-        packaging,
-        author: {
-          connect: {
-            id: '038972ba-d361-4f1d-b0f9-3127aac90651'
-          }
-        }
+        packaging
       }
     })
 

@@ -6,6 +6,3 @@
 */
 -- AlterTable
 ALTER TABLE "Product" DROP COLUMN "internalCode";
-
--- AlterTable
-ALTER TABLE "User" ALTER COLUMN "profilePicture" SET DEFAULT 'default.png';
