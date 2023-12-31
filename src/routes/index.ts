@@ -7,8 +7,7 @@ import Middleware from '@/app/middlewares'
 
 const routes = new Hono()
 routes.use('*', cors({
-  origin: 'https://gon-front-end.vercel.app',
-  allowHeaders: ['Content-Type', 'application/json', 'Accept', 'application/json', 'Access-Control-Allow-Origin', 'https://gon-front-end.vercel.app'],
+  origin: process.env.ORIGIN!
 }))
 routes.use('/public/*', serveStatic({ root: './' }))
 
