@@ -19,7 +19,9 @@ class Auth {
     }, process.env.JWT_SECRET!, 'HS384')
 
     return c.json({
-      ...user,
+      id: user?.id,
+      name: user?.name,
+      role: user?.role,
       token
     }, 201)
   }
