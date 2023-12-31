@@ -6,7 +6,7 @@ import Controller from '@/app/controllers'
 import Middleware from '@/app/middlewares'
 
 const routes = new Hono()
-routes.use('*', cors({
+routes.use('/*', cors({
   allowHeaders: ['Access-Control-Allow-Headers', process.env.BASE_URL!],
   origin: process.env.BASE_URL!
 }))
