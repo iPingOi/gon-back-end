@@ -6,8 +6,8 @@ import Controller from '@/app/controllers'
 import Middleware from '@/app/middlewares'
 
 const routes = new Hono()
-routes.use('/*', cors({
-  allowHeaders: ['Access-Control-Allow-Headers', process.env.BASE_URL!],
+routes.use('*', cors({
+  allowHeaders: ['Access-Control-Allow-Headers', process.env.BASE_URL! + 'X-Requested-With, Content-Type, Accept, Authorization"'],
   origin: process.env.BASE_URL!
 }))
 routes.use('/public/*', serveStatic({ root: './' }))
