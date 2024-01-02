@@ -7,7 +7,7 @@
     "dev": "tsx watch src/app.ts",
     "build": "tsup ./src",
     "postinstall": "prisma generate",
-    "vercel-build": "npx prisma migrate deploy"
+    "vercel-build": "npx prisma generate"
   },
   "prisma": {
     "seed": "pnpx tsx prisma/seed.ts"
