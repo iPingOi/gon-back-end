@@ -9,8 +9,8 @@ const routes = new Hono()
 routes.use('/public/*', serveStatic({ root: './' }))
 
 routes.use('*', cors({
-  origin: 'gon-front-end.vercel.app',
-  allowHeaders: ['Access-Control-Allow-Origin: gon-front-end.vercel.app', 'content-type: application/json']
+  origin: 'https://gon-front-end.vercel.app/',
+  allowHeaders: ['Content-Type', 'application/json', 'Accept', 'application/json'],
 }))
 
 // _GET
