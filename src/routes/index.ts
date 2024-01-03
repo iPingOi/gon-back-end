@@ -16,17 +16,9 @@ routes.get('/', (c) => c.json({
 routes.get('/product/:id', Controller.ViewProduct.View)
 
 // _POST
-routes.post('/user', cors({
-  origin: 'https://gon-front-end.vercel.app',
-  allowHeaders: ['content-type: application/json', 'accept: application/json']
-}), Middleware.CreateUser.Create, Controller.CreateUser.Execute)
-routes.post('/create', cors({
-  origin: 'https://gon-front-end.vercel.app',
-  allowHeaders: ['content-type: application/json', 'accept: application/json']
-}), Controller.CreateJimp.Jimp)
-routes.post('/product', cors({
-  origin: 'https://gon-front-end.vercel.app',
-  allowHeaders: ['content-type: application/json', 'accept: application/json']
-}), Controller.CreateProduct.Execute)
+routes.post('/user', Middleware.CreateUser.Create, Controller.CreateUser.Execute)
+routes.post('/create', Controller.CreateJimp.Jimp)
+routes.post('/product', Controller.CreateProduct.Execute)
+routes.post('/auth', Controller.UserAuth.Execute)
 
 export default routes

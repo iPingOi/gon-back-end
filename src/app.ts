@@ -2,10 +2,14 @@ import { serve } from '@hono/node-server'
 import { Hono } from 'hono'
 
 import routes from './routes'
+import { cors } from 'hono/cors'
 
 const app = new Hono()
 
 app.route('/', routes)
+app.use('*', cors({
+  origin: 'https://gon-front-end.vercel.app'
+}))
 
 app.notFound((c) => {
   return c.json({
