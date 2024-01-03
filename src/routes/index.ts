@@ -1,5 +1,4 @@
 import { Hono } from 'hono'
-import { cors } from 'hono/cors'
 import { serveStatic } from '@hono/node-server/serve-static'
 
 import Controller from '@/app/controllers'
@@ -7,11 +6,6 @@ import Middleware from '@/app/middlewares'
 
 const routes = new Hono()
 routes.use('/public/*', serveStatic({ root: './' }))
-
-routes.use('*', cors({
-  origin: 'https://gon-front-end.vercel.app/',
-  allowHeaders: ['Content-Type', 'application/json', 'Accept', 'application/json'],
-}))
 
 // _GET
 routes.get('/', (c) => c.json({
