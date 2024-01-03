@@ -8,7 +8,8 @@ const app = new Hono()
 
 app.route('/', routes)
 app.use('*', cors({
-  origin: 'https://gon-front-end.vercel.app'
+  origin: 'https://gon-front-end.vercel.app',
+  allowHeaders: ['Access-Control-Allow-Origin: https://gon-front-end.vercel.app', 'content-type: application/json']
 }))
 
 app.notFound((c) => {
