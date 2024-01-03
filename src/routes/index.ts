@@ -8,6 +8,11 @@ import Middleware from '@/app/middlewares'
 const routes = new Hono()
 routes.use('/public/*', serveStatic({ root: './' }))
 
+routes.use('*', cors({
+  origin: 'gon-front-end.vercel.app',
+  allowHeaders: ['Access-Control-Allow-Origin: gon-front-end.vercel.app', 'content-type: application/json']
+}))
+
 // _GET
 routes.get('/', (c) => c.json({
   message: '😊 Everything is fine!'
