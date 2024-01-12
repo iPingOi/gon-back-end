@@ -3,10 +3,6 @@ import { Hono } from 'hono'
 import { cors } from 'hono/cors'
 
 import Controller from '@/app/controllers'
-import Middleware from '@/app/middlewares'
-
-const origins = ['https://gon-front-end.vercel.app', 'http://localhost:3000']
-
 const routes = new Hono()
 
 routes.use('/public/*', serveStatic({ root: './' }))
