@@ -25,7 +25,6 @@ routes.get('/', (c) =>
 routes.get('/product/:id', Controller.ViewProduct.View)
 
 // _POST
-routes.post('/user', Middleware.CreateUser.Create)
 routes.post('/create', Controller.CreateJimp.Jimp)
 routes.post('/product', Controller.CreateProduct.Execute)
 
